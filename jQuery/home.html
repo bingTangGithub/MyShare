@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+    .font-size-30
+    {
+      font-size: 30px;
+    }
+    .text10pxwhite
+    {
+        font-size: 10px;
+        color: #FFFFFF;
+    }
+    .test {
+      color: red;
+      font-size: 20px;
+    }
+    </style>
+</head>
+<body>
+  <script type="text/javascript" src="./jqueryMySelf.js"></script>
+  <!-- <script type="text/javascript" src="./mySelf.js"></script>
+  <script type="text/javascript" src="./jquery.2.1.4.min.js"></script>
+  <script type="text/javascript" src="./jquery2.2.4.js"></script> -->
+
+  <div id="jiajia" class="jiajia" onmouseout="mouseout()">hi, jiajia</div>
+  <!-- <div class='wrap'><div class='wrap2'></div></div> -->
+
+  <div class="test" style="font-weight: bold;">asdhkl</div>
+
+  <ul id="ul">
+    <li id="firstLi">1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+
+  <!-- <p>hello</p> -->
+  <!-- <p>everyone</p> -->
+
+  <!-- <span>我是雪梨，，，，，，，</span> -->
+<!--   <span id="addedSpan">我是被加进来的span</span>
+
+  <button id="button"> 最近有健身吗？</button> -->
+
+  <p id="helloP">Hello</p>
+
+
+  <script type="text/javascript" >
+  // console.log('$():::::::::源码的入口:::::', $());
+  // const test = document.getElementById("firstLi");
+  // const $test = $("#firstLi");
+  // console.log('dom 对象test：：：：：：', test, typeof test);
+  // for(let i in test){
+  //   console.log('各个属性：：：：：：', i, test[i]);
+  // }
+  // 这个函数接收一个包含 CSS 选择器的字符串，然后用这个字符串去匹配一组元素。
+  // 第一个参数是： 用来查找的字符串 第二个参数：作为待查找的 DOM 元素集、文档或 jQuery 对象。
+
+
+
+  // 通过 $(a,c)获取 jQ对象
+  // const $test = $("#jiajia");
+  // console.log('$test.......',  $test);  
+  // console.log('$test.cur.......',  $test.cur);  
+  // console.log('$test.get(0).......',  $test.get(0)); // get(0)获取数组 cur，get(0), 
+  // $test.each(function say(i) {
+  //   console.log(`我是第${i}个暂时性函数`);
+  // });
+  // $test.set({"innerHTML": "goodBye"});
+  // $test.set("innerHTML", "goodBye");
+
+  // $test.html('冰糖');
+  // $test.style('color', 'red');
+  // $test.css({ "color": "black", "background": "green" });
+  // $test.css( "color", "red" );
+  // $test.toggle();
+  // $test.show();
+  // $test.hide();
+  // $test.addClass('font-size-30');
+  // $test.removeClass('font-size-30');
+  // $test.remove();
+  // $test.wrap("<div class='wrap'><div class='wrap2'></div></div>");
+  // const wrapDom = $(".wrap").get(0);
+  // $test.wrap(wrapDom);
+
+  // $test.append("<b>：hello，</b><b>最近有健身吗？</b>")  // 增加孩子, 
+  // $test.append("<div><b>：hello，</b><b>最近有健身吗？</b></div>")  // 增加孩子, 
+  // const $span = $("span");
+  // $span.appendTo("div");
+  // $test.prepend("<b>：hello，</b><b>最近有健身吗？</b>")  // 增加孩子,
+  // $test.before("<b>：hello，</b><b>最近有健身吗？</b>")  
+  // $test.after("<b>：hello，</b><b>最近有健身吗？</b>") 
+  // const clickFirst = () => {
+  //   alert('我是冰糖');
+  // } 
+  // const clickSecond = () => {
+  //   alert('我是雪梨');
+  // } 
+  // const mouseFirst = () => {
+  //   alert('我是冰糖雪梨');
+  // } 
+
+  // $test.bind('click', clickFirst);  
+  // $test.bind('click', clickSecond);  
+  // $test.bind('mouseout', mouseFirst);
+  // $test.unbind('click', clickFirst);
+  // $test.unbind('click', clickSecond);
+
+  // $test.bind('click', ()=> {alert('我是冰糖')} );  
+  // $test.bind('click', ()=> {alert('我是雪梨')} );  
+  // $test.bind('mouseout', ()=> {alert('我是冰糖雪梨')} );  
+  // $test.unbind('click', ()=> {alert('我是冰糖')} );  // 第二个参数传递函数体，没unbind到
+  // $test.unbind('click');  // 删除所有的 click 事件
+  // $test.unbind();  // 删除所有的事件
+ function mouseout () {
+   console.log("通过 onmouseout 属性绑定事件");
+ }
+  // const $ul = $("ul");
+  // const $lis = $ul.find('li');
+  // console.log('$lis::::::', $lis);  // cur: Array(5)   => Array(1)
+  // console.log('$lis.end()::::::', $lis.end());
+
+
+  // const $li = $('li');
+  // console.log('$li.filter( $("#firstLi")[0] )::::::', $li.filter( "#firstLi" ));
+  // console.log('$li.not("#firstLi")::::::', $li.not("#firstLi"));
+  // console.log('$li.not("#firstLi")::::::', $li.not($("#firstLi").get(0)));
+
+  const $helloP = $('#helloP');
+  console.log('$helloP:::::::', $helloP);
+  // console.log('$helloP.add("span"):::::::', $helloP.add("span"));
+  console.log('$helloP.add("<span>Again</span>"):::::::', $helloP.add("<span>Again</span>"));
+ 
+
+// 其它函数 ：$.sibling()
+ const li = $('li').get(2);
+  console.log($.sibling(li, 2 ));
+
+// 其它函数 ：$.getCSS()
+// const test = $(".test").get(0);
+// console.log($.getCSS(test, 'coLoR')); //rgb
+// console.log($.getCSS(test, 'font-weight')); // bold
+// console.log($.getCSS(test, 'font-size'));  // 20px
+
+
+// 其它函数 ：$.hasWord()
+// const test = $(".test").get(0);
+// const test = document.getElementsByClassName('test')[0];
+// console.log('test:::::', test);
+// console.log('$.hasWord(test, "test"):::::', $.hasWord(test, 'test'));
+// console.log('$.hasWord(test, "test2"):::::', $.hasWord(test, 'test2'));
+
+
+// 其它函数 ：$.clean()
+// const test = $(".test").get(0);
+// console.log('$.clean(test):::::', $.clean(test));
+
+
+// 其它函数 ：$.grep()
+// const $test = $(".test");
+// console.log('$test:::::', $test);
+// console.log('$.grep(test):::::', $.grep($test.cur, function(a){return a != t;}));
+// 
+// 
+
+// 
+// 其它函数 ：$.merge()
+// console.log('$.merge( [0,1,2], [2,3] )::::::::', merge( [0,1,2], [2,3] ));
+// console.log('$.merge( [0,1,2], [2,3] )::::::::', merge( [0], [2,3] ));
+
+// function merge(a,b) {
+//   console.log('hello');
+//   for ( var i = 0; i < a.length; i++ ) {
+//     var c = true;
+//     for ( var j = 0; j < b.length; j++ ) {
+//       console.log('wwwwwww');
+//       if ( a[i] == b[j] )
+//         c = false;
+//     }
+//         if ( c )
+//             b.push( a[i] );
+//   }
+//     return b;
+// };
+// function equal(a, b ) {
+//   return callback (a, function(c){return c == b});
+// }
+
+// function callback(num, fun) {
+//   return fun(num);
+// }
+
+// const result = equal(1, 2);
+
+// console.log('equal(1, 2)', result);
+
+</script>
+  
+</body>
+</html>

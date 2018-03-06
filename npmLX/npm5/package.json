@@ -1,0 +1,52 @@
+{
+  "name": "jipei-statements",
+  "version": "0.1.0",
+  "description": "React Boilerplate",
+  "main": "index.js",
+  "config": {
+    "funDebugKey": "6c6bff93edab8b567ed39eb11fc3b98514293c02805043bce460b9c0a292972b",
+    "--scripts-prepend-node-path": true
+  },
+  "scripts": {
+    "prepare": "eslint src/**/*.js src/**/*.jsx",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run dev",
+    "dev": "webpack-dev-server --open --config ./config/webpack.config.js",
+    "build": "gulp build",
+    "compile": "compile:dev && npm run upload:map && npm run clean:map",
+    "compile:dev": "cross-env NODE_ENV=dev gulp build",
+    "compile:qaif": "cross-env NODE_ENV=qaif gulp build",
+    "compile:qafc": "cross-env NODE_ENV=qafc gulp build",
+    "compile:pre": "cross-env NODE_ENV=pre gulp build",
+    "compile:online": "cross-env NODE_ENV=online gulp build",
+    "lint": "eslint src/**/*.js src/**/*.jsx",
+    "lint:fix": "eslint src/**/*.js src/**/*.jsx --fix",
+    "clean:map": "rimraf build/*.map",
+    "upload:map": "cross-env fundebug-cli upload --apikey $npm_package_config_funDebugKey --directory build/"
+  },
+  "keywords": [
+    "react",
+    "webpack",
+    "gulp"
+  ],
+  "author": "overkazaf",
+  "license": "MIT",
+  "devDependencies": {
+    "cross-env": "^5.1.1",
+    "eslint": "^4.3.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-babel": "^4.1.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-react": "^7.1.0",
+    "eslint-plugin-standard": "^2.0.0"
+  },
+  "dependencies": {
+    "antd": "^2.9.0",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0"
+  },
+  "private": true
+}

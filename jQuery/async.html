@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript" src="http://libs.baidu.com/jquery/1.4.4/jquery.min.js"></script>
+  <script type="text/javascript">
+  var ajax = $.ajax({
+    url: './data.json',
+    success: function () {
+        console.log('success')
+    },
+    error: function () {
+        console.log('error')
+    }
+  })
+
+  console.log(ajax) // 返回一个 XHR 对象
+  
+
+</script>
+  
+</body>
+</html>

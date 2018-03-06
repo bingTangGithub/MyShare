@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>蒙版</title>
+  <style type="text/css"> 
+    *{
+      margin:0;
+      padding:0;
+    }
+    .bg {
+      width: 100%;
+      height: 1134px;  /*要想显示出完整的背景，必须定义具体的大于背景图片高度的高度*/
+      background: green url("img/bg.png") center no-repeat;
+    }
+    .modal-overlay {
+      display:none;
+      width: 100%;
+      height: 100%;
+      position:fixed;
+      left:0;
+      top:0;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 10;
+    }
+    .modal-data {
+      display: none;
+      background-size:100% 100%;
+      position: absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      -webkit-transform:translate(-50%,-50%);
+      -moz-transform:translate(-50%,-50%);
+      -ms-transform:translate(-50%,-50%);
+      -o-transform:translate(-50%,-50%);
+      text-align: center;
+      z-index: 10;
+    }
+    .cancleButton{
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+
+<div class="modal-overlay">
+  <div class="modal-data">
+    <img src="./img/alert02.png"/>
+    <div class="cancleButton">没错，就是我</div>
+  </div>
+</div> 
+
+<div class="bg">
+  <button id="showButton">点我查看中奖名单</button>
+</div>
+
+<script type="text/javascript" src="../jquery.2.1.4.min.js"></script>
+<script type="text/javascript">
+  $('#showButton').on('click',function(){
+    $('.modal-overlay').show().find('.modal-data').show();
+  })
+  $('.cancleButton').on('click',function(){
+    $('.modal-overlay').hide().children('').hide();
+  })
+
+  const zhangSan = {
+    getTableData: function() { },
+    setTableData: function() { },
+  };
+
+  const liSi = {
+    getTableData: function() { },
+    setTableData: function() { },
+  };
+
+  zhangSan.getTableData();
+
+
+
+  liSi.getTableData();
+
+
+
+
+  function event1 () {
+
+  }
+
+  function event2 () {
+    
+  }
+
+  const bingTang = {
+    event1: function() { },
+    event2: function() { },
+  };
+
+  const bingTang = {
+    event: {
+      event1: function() { },
+      event2: function() { },
+    },
+    dom: {
+      style: {
+        width,
+        height,
+      },
+    },
+  };
+
+
+  var Conf = (function(){
+    //私有变量
+    var conf = {
+      MAX_NUM: 100,
+      MIN_NUM: 1,
+      COUNT: 1000,
+    };
+
+    // 返回取值器的值
+     return {
+      // 取值器方法
+      get: function (name) {
+        return conf[name] ? conf[name] : null;
+      },
+     }
+  })();
+
+</script> 
+</body>
+</html>

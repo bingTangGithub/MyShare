@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+	<button id="loginBtn">点我登录</button>
+	<script type="text/javascript">
+		//获取单例
+		var getSingle = function(fn){
+		    var result;
+		    return function (){
+		      // return result || (result=fn.apply(this,arguments));
+		      result = result || fn.apply(this,arguments);
+		      return result;
+		    };
+		};
+
+		//创建div登录框
+		var createLoginLayer=function (){
+		    var div= document.createElement('div');
+		    div.innerHTML='我是登录框';
+		    div.style.display="none";
+		    document.body.appendChild(div);
+		    return div;
+		};
+
+
+		var createSingleLoginLayer = getSingle(createLoginLayer);
+		// var createSingleIframe=getSingle(createIframe);
+    
+    document.getElementById('loginBtn').onclick = function() {
+			
+			var loginLayer1 = createSingleLoginLayer();
+			loginLayer1.style.display = "block";
+		}
+
+		var loginLayer2 = createSingleLoginLayer();
+
+		// var iframe1=createSingleIframe();
+		// var iframe2=createSingleIframe();
+
+// console.log(loginLayer1 === loginLayer2);
+	
+	</script>
+</body>
+</html>
